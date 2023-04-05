@@ -82,48 +82,5 @@ for num in range(set_num):
             break
     hierarchy_dataset=hierarchy_dataset[:flg_ii]+[new_hierarchy_dataset]+hierarchy_dataset[flg_ii:]
 hierarchy_dataset=list(reversed(hierarchy_dataset))    
-#plot the initial dataset
-for ii in hierarchy_dataset:
-    num_indv=len(ii.function_x)
-    for jj in range(num_indv):
-        plt.plot(ii.function_x[jj],ii.function_y[jj])
-plt.xticks([])
-plt.yticks([])
-plt.savefig("tt.jpg",dpi=600)
-plt.show()
-#plot the dataset with 1st clu
-for ii in hierarchy_dataset:
-    for kk in range(8):
-        ax=plt.subplot(4,4,kk+1)
-        plt.text(0,0.7,str(kk+1))
-        if ii.num_1==kk:
-            num_indv=len(ii.function_x)
-            for jj in range(num_indv):
-                plt.plot(ii.function_x[jj],ii.function_y[jj])
-                plt.xticks([])
-                plt.yticks([])
-plt.savefig("1th.jpg",dpi=600)
-plt.show()  
-      
-#plot the dataset with 2nd clu
-kk=1
-mm=0
-for ii in hierarchy_dataset:
-    ax=plt.subplot(8,8,kk)
-    plt.text(0,0.65,str(ii.num_1+1)+"_"+str(ii.num_2+1),fontsize=6)
-    num_indv=len(ii.function_x)
-    for jj in range(num_indv):
-        plt.plot(ii.function_x[jj],ii.function_y[jj])
-        plt.xticks([])
-        plt.yticks([])            
-    if kk%64==0:
-        kk=1
-        mm=mm+1
-        plt.savefig("2nd_"+str(mm)+".jpg",dpi=1000)
-        plt.show()  
-    else:
-        kk=kk+1
-mm=mm+1        
-plt.savefig("2nd_"+str(mm)+".jpg",dpi=1000)
-plt.show()  
+
        
